@@ -8,7 +8,7 @@ What jdk contains or composed of and define each components?
 A. jdk stands for java development kit.It has many components like
 1- The compiler 2-The debugger 3-RunTime Interpreter 4-API source code etc..
 Compiler: It converts java source code into byte code.
-RunTime Interpretter: It provides support to run java executable programs in byte code format.
+RunTime Interpreter: It provides support to run java executable programs in byte code format.
 Debugger: It is used to debug java programs.
 API: it is basically built in routines,tools required for building an application software.
 What is IDE?
@@ -16,13 +16,25 @@ A.IDE stands for Integrated development environment.It is a software application
 for the development of the software.It normally consist of source code editor, debugger and it also helps programmers
 to provide intelligent code completion facility when writing code.
 What are the IDEs available in the market to support java?
-A.
+A.1-Intelliji  2-Eclipse 3-netBeans 4-jsource etc.
 Explain the entire java life cycle.
+A- Java lif cycle has three main steps
+1-Editing the program  2-compiling the source code  3-Executing the bytecode
+First we write the source code in Editor and save it as .java extension. then javac compiler converts that source code
+of .java ext into bytecode with .class extension and the last step is execution in which java bytecodes
+which we get after compilation is loaded into JVM(java virtual machine) which convert it into executable form and it
+shows the output.
 what is class?
+A- Class is a template for an object.It is a blue print of an object.
 What is object?
+A-Object is an instance of the class.
 What is the entry point of an application?
+A- The main method is an entry point of java application.
 Why main is static?
+A-As we know that main method is the entry point of java core application so the jvm calls this method without creating
+its instance of a class which contains the main method,thats why it declare main method as static.
 Which class is the superclass of all classes?
+A-
 What is difference between path and classpath variables?
 What is the difference between an Interface and Abstract class?
 Can you make an Object from an Interface and Abstract class ? if not how do you use it ?

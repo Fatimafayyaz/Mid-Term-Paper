@@ -12,6 +12,22 @@ public class PrimeNumber {
 		 * Use any databases[MongoDB, Oracle, MySql] to store data and retrieve data.
 		 *
 		 */
+		int j,counter=0;
+		for (int num = 2; num < 100; num++) {
+
+			for ( j = 2; j < num; j++) {
+				if (num % j == 0)
+					break;
+				else
+					continue;
+			}
+			if(num==j){
+				counter++;
+				System.out.print(num + " ");}
+		}
+		System.out.println("\ntotal prime number up to 100 are : "+ counter);
+
+
 
 	}
 
