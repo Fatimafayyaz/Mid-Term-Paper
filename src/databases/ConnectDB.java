@@ -132,6 +132,27 @@ public class ConnectDB {
             e.printStackTrace();
         }
     }
+    public void insertDataFromArrayListToMySql(int [] ArrayData)
+    {
+        try {
+            connectToMySql();
+            String sql1="INSERT INTO arraytable(arraydata) values(?)";
+           for(int n=0;n<ArrayData.length;n++)
+              {
+             //Statement statement = connection.createStatement();
+             PreparedStatement ps=connect.prepareStatement(sql1);
+             ps.setInt(1,ArrayData[n]);
+             ps.executeUpdate();
+         }     System.out.println("data inserted ");
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public List<String> directDatabaseQueryExecute(String passQuery,String dataColumn)throws Exception{
         List<String> data = new ArrayList<String>();
