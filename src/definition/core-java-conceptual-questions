@@ -1,10 +1,22 @@
 Please answer the below core-java Questions:
 
 What is programing language?
-A.
+A.Computer programming languages allow us to give instructions to a computer in a language that computer understands.
+The basic computer language is machine language that is (0,1)that computer can understand directly but for all other
+types of languages we need interpreter and compiler to translate it into low level to make it computer understandable.
 What jdk contains or composed of and define each components?
+A. jdk stands for java development kit.It has many components like
+1- The compiler 2-The debugger 3-RunTime Interpreter 4-API source code etc..
+Compiler: It converts java source code into byte code.
+RunTime Interpretter: It provides support to run java executable programs in byte code format.
+Debugger: It is used to debug java programs.
+API: it is basically built in routines,tools required for building an application software.
 What is IDE?
+A.IDE stands for Integrated development environment.It is a software application that provides facilities to programmers
+for the development of the software.It normally consist of source code editor, debugger and it also helps programmers
+to provide intelligent code completion facility when writing code.
 What are the IDEs available in the market to support java?
+A.
 Explain the entire java life cycle.
 what is class?
 What is object?
