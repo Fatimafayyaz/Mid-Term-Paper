@@ -13,7 +13,7 @@ public class Sort {
         final long startTime = System.currentTimeMillis();
         int [] list = array;
 
-        for(int i=0; i<array.length; i++){
+      /*  for(int i=0; i<array.length; i++){
             for(int j=i+1; j<array.length; j++){
                 if(array[j]<array[i]){
                     int temp = array[j];
@@ -22,7 +22,7 @@ public class Sort {
                 }
             }
 
-        }
+        }*/
 
         final long endTime = System.currentTimeMillis();
         final long executionTime = endTime - startTime;
@@ -34,9 +34,20 @@ public class Sort {
         final long startTime = System.currentTimeMillis();
         int [] list = array;
         //implement here
+        int temp;
+        for(int i=1;i<array.length;i++)
+        {
+            for(int j=i;j>0;j--)
+            {
+                if(array[j]<array[j-1])
+                {
 
-
-
+                    temp=array[j];
+                    array[j]=array[j-1];
+                    array[j-1]=temp;
+                }
+            }
+        }
         final long endTime = System.currentTimeMillis();
         final long executionTime = endTime - startTime;
         this.executionTime = executionTime;
@@ -46,7 +57,7 @@ public class Sort {
     public int[] bubbleSort(int [] array){
         int [] list = array;
         //implement here
-
+       
         
         
         return list;

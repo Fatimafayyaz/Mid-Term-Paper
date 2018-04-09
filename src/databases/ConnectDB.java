@@ -132,7 +132,7 @@ public class ConnectDB {
             e.printStackTrace();
         }
     }
-    public void insertDataFromArrayListToMySql(int [] ArrayData)
+   /* public void insertDataFromArrayListToMySql(int [] ArrayData)
     {
         try {
             connectToMySql();
@@ -151,7 +151,7 @@ public class ConnectDB {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
 
     public List<String> directDatabaseQueryExecute(String passQuery,String dataColumn)throws Exception{
