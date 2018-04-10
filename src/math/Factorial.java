@@ -14,22 +14,28 @@ public class Factorial {
          *
          */
         //iteration method
-        long fact = 1;
+
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter any number:  ");
-        long n = scanner.nextLong();
-        for (long i = n; i >= 1; i--)
-            fact = fact * i;
-        System.out.println("\nfactorial of  " + n + " is " + fact);
-
-        //recursion method
-        Scanner scanner1 = new Scanner(System.in);
-        long n1 = 0;
-        System.out.print("Enter any number:  \t");
-        n = scanner.nextLong();
-        System.out.println("Factorial of number : " + n + " is " + recursiveFactorial(n));
-
+        long num = scanner.nextLong();
+         //calFactorial(num);
+        System.out.println("\nfactorial of  " + num + " is " + calFactorial(num));
+        System.out.println("\nfactorial of  " + num + " is " + recursiveFactorial(num));
     }
+
+      public static long  calFactorial(long n ) {
+          long fact = 1;
+          for (long i = n; i >= 1; i--)
+              fact = fact * i;
+          //System.out.println("\nfactorial of  " + n + " is " + fact);
+          return fact;
+      }
+        //recursion method
+       // Scanner scanner1 = new Scanner(System.in);
+        //long n1 = 0;
+        //System.out.print("Enter any number:  \t");
+        //n = scanner.nextLong();
+        //System.out.println("Factorial of number : " + n + " is " + recursiveFactorial(n));
 
 
     public static long recursiveFactorial(long n) {
@@ -42,5 +48,5 @@ public class Factorial {
     }
 
 
-
 }
+
