@@ -94,7 +94,7 @@ public class ConnectDB {
         return dataList;
     }
 
-    public void insertDataFromArrayToMySql(int [] ArrayData, String tableName, String columnName)
+    public void insertDataFromArrayToMySql(int[] ArrayData, String tableName, String columnName)
     {
         try {
             connectToMySql();
@@ -132,18 +132,20 @@ public class ConnectDB {
             e.printStackTrace();
         }
     }
-   /* public void insertDataFromArrayListToMySql(int [] ArrayData)
+    public void insertDataFromArrayListToMySql(List<Student> list, String tableName, String columnName)
     {
         try {
             connectToMySql();
-            String sql1="INSERT INTO arraytable(arraydata) values(?)";
-           for(int n=0;n<ArrayData.length;n++)
-              {
-             //Statement statement = connection.createStatement();
-             PreparedStatement ps=connect.prepareStatement(sql1);
-             ps.setInt(1,ArrayData[n]);
-             ps.executeUpdate();
-         }     System.out.println("data inserted ");
+            ps = connect.prepareStatement("DROP TABLE IF EXISTS `"+tableName+"`;");
+            ps.executeUpdate();
+            ps = connect.prepareStatement("CREATE TABLE `"+tableName+"` (`ID` int(11) NOT NULL AUTO_INCREMENT,`SortingNumbers` bigint(20) DEFAULT NULL,  PRIMARY KEY (`ID`) );");
+            ps.executeUpdate();
+            for(Student st:list){
+                ps = connect.prepareStatement("INSERT INTO "+tableName+" ( "+columnName+" ) VALUES(?)");
+                ps.setObject(1,st);
+                ps.executeUpdate();
+            }
+
         } catch (IOException e) {
             e.printStackTrace();
         } catch (SQLException e) {
@@ -151,9 +153,7 @@ public class ConnectDB {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-    }*/
-
-
+    }
     public List<String> directDatabaseQueryExecute(String passQuery,String dataColumn)throws Exception{
         List<String> data = new ArrayList<String>();
 
@@ -170,7 +170,7 @@ public class ConnectDB {
         return data;
     }
 
-    public void insertDataFromArrayListToMySql(List<Student> list, String tableName, String columnName)
+    public void insertDataFromMyArrayToMySql(ArrayList<Integer> list, String tableName, String columnName)
     {
         try {
             connectToMySql();
@@ -178,7 +178,7 @@ public class ConnectDB {
             ps.executeUpdate();
             ps = connect.prepareStatement("CREATE TABLE `"+tableName+"` (`ID` int(11) NOT NULL AUTO_INCREMENT,`SortingNumbers` bigint(20) DEFAULT NULL,  PRIMARY KEY (`ID`) );");
             ps.executeUpdate();
-            for(Student st:list){
+            for(Integer st:list){
                 ps = connect.prepareStatement("INSERT INTO "+tableName+" ( "+columnName+" ) VALUES(?)");
                 ps.setObject(1,st);
                 ps.executeUpdate();
