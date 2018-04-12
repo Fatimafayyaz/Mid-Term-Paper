@@ -1,16 +1,39 @@
 Please answer the below Data Structure Questions:
 
 why do we need data structure?
-A.
+A.Data structure is a particular way of storing and organizing information in a computer so that it can be retrieved
+ and used most effeciently.
 What are the various operations that can be performed on different Data Structures?
+A-1. Traversing. 2. Searching. 3. Inserting. 4. Deleting. 5. Sorting. 6. Merging.
 List out the areas in which data structures are applied extensively?
+A-Data structures are used in any program or software.
+They are used in the areas of Compiler Design,Operating System,DBMS,,Graphics,Simulation,Artificial Intelligence
 what is an Array?
+A-Array is a container which can hold a fix number of items and these items should be of the same type.
 what is the difference between the Array and ArrayList?
+A-Arraylist class implements List interface. It is widely used because of the functionality and flexibility it offers.
+ArrayList is a resizable-array implementation of the List interface. It implements all optional list operations,
+and permits all elements, including null.
 what is LinkedList?
+A-A linked list is a sequence of data structures, which are connected together through pointers which are basically called
+addresses.Linked list can be visualized as a chain of nodes, where every node points to the next node.
 How is an Array different from Linked List?
+A-1)Arrays are index based data structure where each element associated with an index. whereas Linked list relies on
+references where each node consists of the data and the references to the previous and next element.
+2)An array is a collection of identical data objects or similar type of data objects stored in consecutive memory locations
+under a common heading or a variable name.While a linked list is data structure which contains a sequence of the elements
+where each element is linked to its next element. There are two fields in an element of linked list. One is Data filed,
+and other is link filed, Data field contains the actual value to be stored and processed. Furthermore,
+the link field contains the address of the next data item in the linked list. The address used to access a particular
+node is known as a pointer.
 what is queue?
+A-A Queue is designed in such a way so that the elements added to it are placed at the end of Queue and removed from
+the beginning of Queue.It is called FIFO
 what is stack?
+A-A stack is a container of objects that are inserted and removed according to the last-in first-out (LIFO) principle.
+In the push down stacks only two operations are allowed: push the item into the stack, and pop the item out of the stack.
 what is FIFO and LIFO?
+Fisrt In First Out used by Queues and Last In First Out used by stack.
 what is the order of complexity?
 what is the best case to search an element from an array?
 what is the worst case to search an element from an array?
