@@ -36,49 +36,66 @@ public class ProcessStudentInfo {
 
 			public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
 				//Path of XML data to be read.
+
 				String pathSelenium  = System.getProperty("user.dir") +"/src/parser/selenium.xml";
 				String pathQtp = System.getProperty("user.dir") + "/src/parser/qtp.xml";
 				String tag = "id";
                 //Create ConnectDB Object
 				ConnectDB connectDB = new ConnectDB();
 				//Declare a Map with List<String> into it.
-				Map<String,List<Student>> list = new LinkedHashMap<String,List<Student>>();
+			Map<String,List<Student>> list = new LinkedHashMap<String,List<Student>>();
 				
 				/*Declare 2 ArrayList with Student data type to store Selenium student into one of the ArrayList and
 				  Qtp student into another ArrayList. */
 				
 				List<Student> seleniumStudents = new ArrayList<Student>();
 				List<Student> qtpStudents = new ArrayList<Student>();
-				
+
 				//Create XMLReader object.
 				XmlReader xmlReader = new XmlReader();
 				
 				
 				//Parse Data using parseData method and then store data into Selenium ArrayList.
 				seleniumStudents = xmlReader.parseData(tag, pathSelenium);
+				Student s1=new Student();
+				s1.setId("id");
+				s1.setFirstName("firstName");
+				s1.setLastName("lastName");
+				s1.setScore("score");
 
-				//Parse Data using parseData method and then store data into Qtp ArrayList.
-				
+				//System.out.println(seleniumStudents.get(1));
+					//Parse Data using parseData method and then store data into Qtp ArrayList.
+			qtpStudents= xmlReader.parseData(tag,pathQtp);
+			Student s2 =new Student();
+			s2.setId("id");
+			s2.setFirstName("firstName");
+			s2.setLastName("lastName");
+			s2.setScore("score");
+				//System.out.println(qtpStudents.get(1));
+
 				//add Selenium ArrayList data into map.
-			
-				//add Qtp ArrayList data into map.
-		
+
+              list.put("1",seleniumStudents);
+					//add Qtp ArrayList data into map.
+		       list.put("2",qtpStudents);
 		      	
 				//Retrieve map data and display output.
+				for(Map.Entry me: list.entrySet()){
 
+					System.out.println(me.getKey()+ " "+ me.getValue());}
 
 
 				//Store Qtp data into Qtp table in Database
-				connectDB.insertToMongoDB(seleniumStudents,"qtp");
+				//connectDB.insertToMongoDB(seleniumStudents,"qtp");
 				//connectDB.insertDataFromArrayListToMySql(seleniumStudents, "qtp","studentList");
 
 				//Store Selenium data into Selenium table in Database
 
 				//Retrieve Qtp students from Database
-               List<Student> stList = connectDB.readStudentListFromMongoDB("qtp");
+               /*List<Student> stList = connectDB.readStudentListFromMongoDB("qtp");
                for(Student st:stList){
                	  System.out.println(st.getFirstName()+" "+st.getLastName()+" "+st.getScore()+" "+st.getId());
-			   }
+			   }*/
 
 			   //Retrieve Selenium students from Database
 

@@ -62,7 +62,14 @@ public class XmlReader {
 	//This convert method need to be implemented.
 	public String convertIntToChar(String score){
 		String grade = "";
-		
+		int score1=Integer.parseInt(score);
+		if(score1>=90&&score1<=100)
+			grade="A";
+		else if(score1<=89&&score1>=80)
+			grade="B";
+		else
+			grade="C";
+
 		
 		return grade;	
 	}

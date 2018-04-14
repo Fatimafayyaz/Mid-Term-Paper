@@ -19,7 +19,8 @@ public class Numbers {
 	 * At the end. After running all the sorting algo, come to a conclusion which one is suitable on given data set.
 	 *
 	 */
-
+   /*i will check the conclusion after running all for 1000000 data and quick sort and heap sort have less execution time
+	   so these are better for given set of data */
 	public static void main(String[] args) throws Exception {
 		
 		int [] num = new int[10];
@@ -41,7 +42,7 @@ public class Numbers {
 		System.out.println("Total Execution Time of " + num.length + " numbers in Insertion Sort take: " + insertionSortExecutionTime + " milli sec");
 		connectDB.insertDataFromArrayToMySql(num, "Insertion_sort", "SortingNumbers");
 		List<String> numbers1 = connectDB.readDataBase("Insertion_sort", "SortingNumbers");
-		printValue(numbers);
+		printValue(numbers1);
 		 n = num.length;
 		randomize (num, n);
 		//bubble sort

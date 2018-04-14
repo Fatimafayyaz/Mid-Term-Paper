@@ -87,6 +87,10 @@ public class Sort {
          //implement here
          int beg=0; int end=array.length-1;
          mergeSort(array,beg,end);
+
+        final long endTime = System.currentTimeMillis();
+        final long executionTime = endTime - startTime;
+        this.executionTime = executionTime;
         return list;
     }
 
@@ -133,6 +137,10 @@ public class Sort {
             int start = 0;
             int end = array.length - 1;
             quickSort(array, start, end);
+
+            final long endTime = System.currentTimeMillis();
+            final long executionTime = endTime - startTime;
+            this.executionTime = executionTime;
             return list;
         }
              //implement here
@@ -176,6 +184,10 @@ public class Sort {
             maxHeap(array,0);
 
         }
+
+        final long endTime = System.currentTimeMillis();
+        final long executionTime = endTime - startTime;
+        this.executionTime = executionTime;
         return list;
     }
     public  void arrayHeapify(int arr[]) {
@@ -208,6 +220,10 @@ public class Sort {
         //Bucket sort algorithm distributes elements of an array into number of buckets. This is a non-comparison sort
           int max=maxValue(array);
           bucketSort(array,max);
+
+          final long endTime = System.currentTimeMillis();
+          final long executionTime = endTime - startTime;
+          this.executionTime = executionTime;
           return list;
     }
 
@@ -265,6 +281,9 @@ public class Sort {
             interval = (interval - 1) / 3;
         }
 
+        final long endTime = System.currentTimeMillis();
+        final long executionTime = endTime - startTime;
+        this.executionTime = executionTime;
         return list;
     }
 
