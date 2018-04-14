@@ -23,7 +23,7 @@ public class EmployeeInfo extends EmployeeAbstract implements Employee {
 	 */
 	static String companyName;
 	int employeeId, empPerformance;
-	double empSalary;
+	 static double empSalary;
 	String empName;
 	String ssn, deptName;
 	static double houseRent;
@@ -42,7 +42,7 @@ public class EmployeeInfo extends EmployeeAbstract implements Employee {
 	public EmployeeInfo() {
 		employeeId=0;
 		empName="";
-		empSalary=0;
+		//empSalary=0;
 		empAge=0;
 		deptName="";
 		ssn="";
@@ -106,7 +106,7 @@ public class EmployeeInfo extends EmployeeAbstract implements Employee {
 		 * Hints: pension will be 5% of the salary for 1 year, 10% for 2 years with the company and so on.
 		 *
 		 */
-		public static double calculateEmployeePension (int numberOfYearsWithCompany) {
+		public static double calculateEmployeePension () {
 			double total = 0;
 			Scanner sc = new Scanner(System.in);
 			System.out.println("Please enter start date in format (example: May,2015): ");
@@ -116,10 +116,25 @@ public class EmployeeInfo extends EmployeeAbstract implements Employee {
 			String convertedJoiningDate = DateConversion.convertDate(joiningDate);
 			String convertedTodaysDate = DateConversion.convertDate(todaysDate);
 			//implement numbers of year from above two dates
-			int numOfYears;
-
+            String dateArray[]=convertedJoiningDate.split("/");
+            String month1=dateArray[0];
+            String year1=dateArray[1];
+			 System.out.println("Number of years of Joining Date:= "+year1);
+             dateArray=convertedTodaysDate.split("/");
+             String month2=dateArray[0];
+             String year2=dateArray[1];
+			System.out.println("Number of years of todays date:- "+year2);
+            int years=0;
+            years=Integer.parseInt(year2)-Integer.parseInt(year1);
+			System.out.print("Pension of Employee for " +years+ " Years :-");
 			//Calculate pension
 
+			if(years==1)
+				total=total+(empSalary*5.0/100);
+            else if(years==2)
+				total=total+(empSalary*10.0/100);
+            else
+				total=total+(empSalary*15.0/100);
 			return total;
 		}
 
@@ -203,22 +218,22 @@ public class EmployeeInfo extends EmployeeAbstract implements Employee {
 						date = 6;
 						break;
 					case July:
-						date = 1;
+						date = 7;
 						break;
 					case August:
-						date = 1;
+						date = 8;
 						break;
 					case September:
-						date = 1;
+						date = 9;
 						break;
 					case October:
-						date = 1;
+						date = 10;
 						break;
 					case November:
-						date = 1;
+						date = 11;
 						break;
 					case December:
-						date = 1;
+						date = 12;
 						break;
 					default:
 						date = 0;

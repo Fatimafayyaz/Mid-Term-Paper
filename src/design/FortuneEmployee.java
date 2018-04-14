@@ -22,9 +22,11 @@ public class FortuneEmployee {
 		System.out.println("Employee Age: "+emp2.getEmployeeAge());
 		System.out.println("Employee Department: "+emp2.getDeptName());
 		System.out.println("Employee SSN: "+emp2.getSocialSecurity());
-		emp2.setEmpSalary(5000);
+		emp2.setEmpSalary(10000);
+		System.out.println("Employee basic Salary:= "+EmployeeInfo.empSalary);
 		emp2.benefitLayout();
-		System.out.println("total salary after benefits are: "+emp2.calculateSalary());
+		System.out.println("Total salary after benefits are: "+emp2.calculateSalary());
+		System.out.print(EmployeeInfo.calculateEmployeePension());
 
 	}
 

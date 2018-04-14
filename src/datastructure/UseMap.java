@@ -40,7 +40,7 @@ public class UseMap {
 		for(Map.Entry<String,List<String>> entry:map.entrySet()){
 			System.out.println(entry.getKey()+ " "+ entry.getValue());
 		}
-
+		//ConnectDB connectDB = new ConnectDB();
 
 	}
 
